@@ -5,7 +5,8 @@ $.extend(networkOutputBinding, {
       return $(scope).find('.shiny-network-output');
     },
     renderValue: function(el, data) {
-          //use join() to combine the array of strings that comprise the svg code
+          //use join() to combine the array of strings in data that comprise the svg code
+          //data is sent from shiny
           $(el).html(data.join());      
     }
   });

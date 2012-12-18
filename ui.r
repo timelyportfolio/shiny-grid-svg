@@ -7,9 +7,14 @@ shinyUI(
   pageWithSidebar(
     headerPanel("Shiny with gridSVG"),
     sidebarPanel(
-      selectInput("example", "Choose an example:", 
+      HTML("Motivated by the very fine work of Paul Murrell in this 
+            <a href=\"http://www.stat.auckland.ac.nz/~paul/Reports/ggplotSlider/ggplotSlider.html\">Technical Report</a>
+            and <a href=\"http://journal.r-project.org/current.html\">articles recently published in the R-Journal</a> I will show how to send
+            grid graphics as SVG to the browser with Shiny.<br></br>"),
+      selectInput("example", "Choose an example lattice chart (from lattice package documentation):", 
                   choices = c("xyplot", "dotplot", "barchart")),
-      submitButton("Make Grid SVG")
+      submitButton("Make Grid SVG"),
+      helpText(HTML("All source available on <a href = \"https://github.com/timelyportfolio/shiny-grid-svg\">Github</a>"))
       ),
     mainPanel(
       includeHTML("svgfiller.js"),
